@@ -1,0 +1,7 @@
+# Local JSON files
+*.json
+
+# Terraform
+.terraform*
+*.plan
+*.tfstate
