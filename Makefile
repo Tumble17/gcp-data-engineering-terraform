@@ -56,10 +56,16 @@ tf/init:
 	@echo Initializing Terraform
 	cd ${TERRAFORM_ROOT_LOCATION} && terraform init
 
-tf/plan-to-file:
+tf/fmt:
+	terraform fmt --recursive
+
+tf/validate:
+	cd ${TERRAFORM_ROOT_LOCATION} && terraform validate
+
+tf/plan:
 	@echo Planning Terraform to file
 	cd ${TERRAFORM_ROOT_LOCATION} && terraform plan -out=terraform.plan
 
-tf/apply-from-file:
+tf/apply:
 	cd ${TERRAFORM_ROOT_LOCATION} && terraform apply terraform.plan
 
